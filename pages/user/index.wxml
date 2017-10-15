@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class='m-user'>
+  <view wx:if='{{userInfo}}' class='m-user-info'>
+    <image class='u-avator' src='{{userInfo.avatarUrl}}'></image>
+    <view class='u-nickname'>微信账号：{{userInfo.nickName}}</view>
+  </view>
+  <view wx:else class='m-user-info'>
+    <button plain open-type='getUserInfo' bindgetuserinfo='userInfoHandler' class='u-btn u-btn-primary u-btn-login'>登录授权获取信息</button>
+  </view>
+  <view class='m-all-order'>
+    <image style='width: 15px;height: 15px;' src='{{allOrderImage}}'></image>
+    <text class='u-text'>全部订单</text>
+    <image class='u-navigate-icon' style='width: 15px;height: 15px;' src='{{navigateImage}}'></image>
+  </view>
+  <view class='m-all-order'>
+    <image style='width: 15px;height: 15px;' src='{{needPayImage}}'></image>
+    <text class='u-text'>待付款</text>
+    <image class='u-navigate-icon' style='width: 15px;height: 15px;' src='{{navigateImage}}'></image>
+  </view>
+</view>

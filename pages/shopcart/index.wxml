@@ -1,0 +1,13 @@
+<!--shopcart.wxml-->
+<view wx:if='{{shopcart.length == 0}}' class='m-cart-empty'>
+  <view class='u-circle'></view>
+  <text>去添加点什么吧</text>
+</view>
+<view wx:else class='container'>
+  <block wx:for='{{shopcart}}' wx:key='key'>
+    <view class='u-shopcart-item'>
+      <image class='u-shopcart-thumbnails' src='{{item.thumbnails}}'></image>
+      <text>{{item.productAccount}}</text>
+    </view>
+  </block>
+</view>

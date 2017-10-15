@@ -1,0 +1,117 @@
+.container {
+  padding-bottom: 60px;
+}
+.u-image {
+	width: 100%;
+}
+swiper {
+  height: 320px;
+}
+.m-buy-toolbar {
+  display: flex;
+  height: 40px;
+  line-height: 40wpx;
+  border-top: 1px solid #eee;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+}
+
+.m-buy-toolbar button {
+  font-size: 14px;
+  width: 50%;
+}
+
+.u-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+
+.u-icon-buy {
+  position: relative;
+  top: -1px;
+}
+
+.u-buy[plain] {
+  border-right: 1px solid #eee;
+  border-radius: 0;
+}
+
+.m-product-item {
+  margin: 10px 5px;
+  padding: 10px 5px;
+}
+
+.u-product-name {
+  text-align: center;
+  display: block;
+}
+
+.m-detail {
+  color: #757575;
+  display: flex;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.m-detail:last-child {
+  border-bottom: none;
+}
+
+.u-title {
+  font-size: 14px;
+  flex-grow: 1;
+}
+.u-option {
+  flex-grow: 1;
+}
+
+.m-calculator {
+  display: flex;
+}
+.m-calculator .u-calculator-option {
+  display: flex;
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.m-calculator .u-title {
+  color: #757575;
+  height: 30px;
+  line-height: 30px;
+}
+
+.u-calculator-option button {
+  line-height: 30px;
+  color: #757575;
+  margin: 0;
+}
+
+.u-calculator-option {
+  border: 1px solid #eee;
+}
+
+.u-add, .u-reduce, .u-disabled{
+  width: 80px;
+}
+
+.u-product-number {
+  width: 40px;
+}
+
+.u-disabled[plain] {
+  background-color: #eee;
+  border-radius: 0;
+}
+
+.u-product-number {
+  text-align: center;
+  color: #757575;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}

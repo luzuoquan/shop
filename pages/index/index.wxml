@@ -1,0 +1,26 @@
+<view class="container">
+  <view class='m-logo'>
+    <image style='height: 75px;width: 100%' mode='aspectFit' src='/assets/images/m_logo.jpg'></image>
+  </view>
+  <swiper indicator-dots='true' autoplay='true'interval='2000'>
+    <block wx:for="{{imgUrls}}" wx:key="key">
+      <swiper-item>
+        <image src='{{item.src}}' mode='widthFix' style='width: 100%; height: 150px;'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='m-product'>
+    <block wx:for="{{products}}" wx:key="key">
+      <navigator url='{{"/pages/product/index?productId=" + item.productId}}'>
+        <view class='m-product-item'>
+          <image src='{{item.src||item.imageUrl}}' style='width:90px;height:90px;'></image>
+          <view class='m-product-detail'>
+            <text class='u-product-title'>{{item.title||item.productName}}</text>
+            <text class='u-product-price'>惊喜价¥：{{item.price}}</text>
+            <button plain class='u-btn u-btn-primary u-none-border u-btn-buy'>立即抢购</button>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>

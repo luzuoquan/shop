@@ -1,0 +1,25 @@
+/* shopcart.wxss */
+page {
+  background-color: #eee;
+}
+.m-cart-empty {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-60%);
+  font-size: 12px;
+  color: #808080;
+  text-align: center;
+}
+.u-circle {
+  background-color: #808080;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  margin: 0 auto 5px;
+}
+.u-shopcart-item {
+  display: flex;
+}
