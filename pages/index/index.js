@@ -1,5 +1,6 @@
 // index
-const baseUrl = 'http://192.168.1.114:3001'
+const config = require('../../config/index.js')
+const baseUrl = config.developConfig.host
 Page({
 	data: {
 		name: 'Fedora123',
