@@ -1,7 +1,15 @@
 /* shopcart.wxss */
 page {
-  background-color: #eee;
+   background-color: #eee; 
 }
+.weui-cell {
+  padding: 10px;
+}
+
+.weui-cell__bd {
+  position: relative;
+}
+
 .m-cart-empty {
   width: 100px;
   height: 100px;
@@ -22,4 +30,27 @@ page {
 }
 .u-shopcart-item {
   display: flex;
+  border-bottom: 1px solid #eee;
+  padding: 5px 0;
+}
+
+.u-shopcart-thumbnails {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.u-shopcart-title {
+  font-size: 14px;
+  color: #808080;
+  max-width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.u-product-account {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
 }
