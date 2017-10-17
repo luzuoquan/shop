@@ -4,10 +4,10 @@ const baseUrl = config.developConfig.host
 Page({
   data: {
     shopcart: [],
-    checkboxItems: [
-      {name: 'standard is dealt for u.', value: '0', checked: true},
-      {name: 'standard is dealicient for u.', value: '1'}
-    ]
+    allBuy: {
+      checked: false,
+      value: 'all'
+    }
   },
   onShow() {
     const uuid = wx.getStorageSync('uuid')
@@ -41,6 +41,21 @@ Page({
 
     this.setData({
       shopcart: shopcart
-    });
+    })
+  },
+  allBuyCheck(e) {
+    const values = e.detail.value
+    const _allBuy = this.data.allBuy
+    const shopcart = this.data.shopcart
+
+    shopcart.forEach(item => item.checked = values[0] === 'all')
+
+    this.setData({
+      allBuy: {
+        checked: !_allBuy.checked,
+        value: 'all'
+      },
+      shopcart: shopcart
+    })
   }
 })

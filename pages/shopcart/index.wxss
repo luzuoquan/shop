@@ -1,6 +1,8 @@
 /* shopcart.wxss */
 page {
-   background-color: #eee; 
+   background-color: #eee;
+   margin-top: 10px;
+   position: relative;
 }
 .weui-cell {
   padding: 10px;
@@ -8,6 +10,7 @@ page {
 
 .weui-cell__bd {
   position: relative;
+  display: flex;
 }
 
 .m-cart-empty {
@@ -43,14 +46,53 @@ page {
 .u-shopcart-title {
   font-size: 14px;
   color: #808080;
-  max-width: 100px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  margin-left: 10px;
+  flex: 3;
 }
 
 .u-product-account {
   position: absolute;
   bottom: 5px;
   right: 5px;
+}
+
+.u-shopcart-toolbal {
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+}
+
+.u-shopcart-toolbal .u-text {
+  color: #808080;
+  font-size: 14px;
+}
+
+.u-inline-checkbox {
+  display: inline-block;
+}
+
+.u-shopcart-number {
+  margin-left: 10px;
+  color: #808080;
+  font-size: 14px;
+  flex: 2;
+}
+
+.u-shopcart-price {
+  color: #808080;
+  font-size: 14px;
+  flex: 2;
+}
+
+.u-shopcart-detail {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.weui-btn {
+  margin-top: 0;
 }

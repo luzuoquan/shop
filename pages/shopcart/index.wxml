@@ -18,14 +18,31 @@
               </label>
               <view class="weui-cell__bd">
                 <image class='u-shopcart-thumbnails' src='{{item.thumbnails}}'></image>
-                <text class='u-shopcart-title'>{{item.product.productName}}</text>
-                <view class='u-product-account'>
-                  123445
+                <view class="u-shopcart-detail">
+                  <text class='u-shopcart-title'>{{item.product.productName}}</text>
+                  <text class="u-shopcart-number">数量:{{item.productAccount}}</text>
+                  <text class="u-shopcart-price">¥{{item.product.price}}</text>
                 </view>
               </view>
             </view>
           </block>
         </checkbox-group>
       </view>
+  </view>
+  <view class='u-shopcart-toolbal'>
+    <checkbox-group bindchange="allBuyCheck" class="u-inline-checkbox">
+      <label class="weui-cell weui-check__label">
+          <checkbox class="weui-check" value="{{allBuy.value}}" checked="{{allBuy.checked}}"/>
+          <view class="weui-cell__hd weui-check__hd_in-checkbox">
+            <icon class="weui-icon-checkbox_circle" type="circle" size="16" wx:if="{{!allBuy.checked}}"></icon>
+            <icon class="weui-icon-checkbox_success" type="success" size="16" wx:if="{{allBuy.checked}}"></icon>
+          </view>
+          <view class="weui-cell__bd">
+            <text class="u-text">全选</text>
+          </view>
+      </label>
+    </checkbox-group>
+    <text>总价¥:{{totalMoney}}</text>
+    <button class="weui-btn mini-btn" type="primary" size="mini">结算</button>
   </view>
 </view>
