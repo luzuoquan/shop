@@ -41,7 +41,7 @@
     </view>
   </view>
   <view class='m-buy-toolbar'>
-    <button plain class='u-buy'>
+    <button plain class='u-buy' bindtap='pruchase'>
       <image class='u-icon u-icon-buy' src='/assets/images/money+.png' mode='aspectFit'></image>
       立即购买
     </button>

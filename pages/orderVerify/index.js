@@ -3,7 +3,7 @@ Page({
   data: {
 
   },
-  onLaunch() {
-    console.info(321)
+  onLoad() {
+    console.info(this.options.productId)
   }
 })

@@ -60,5 +60,12 @@ Page({
         })
       }
     })
+  },
+  pruchase() {
+    // console.info(this.data.product)
+    const data = this.data
+    wx.navigateTo({
+      url: `/pages/orderVerify/index?productId=${data.product.productId}`
+    })
   }
 })

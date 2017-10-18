@@ -96,3 +96,18 @@ page {
 .weui-btn {
   margin-top: 0;
 }
+
+.u-buy-btn {
+  border-radius: 0;
+  position: absolute;
+  right: 0;
+  height: 40px;
+}
+
+button::after {
+  border:  none;
+}
+
+button[size="mini"] {
+  line-height: 40px;
+}

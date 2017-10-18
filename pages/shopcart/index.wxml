@@ -21,7 +21,7 @@
                 <view class="u-shopcart-detail">
                   <text class='u-shopcart-title'>{{item.product.productName}}</text>
                   <text class="u-shopcart-number">数量:{{item.productAccount}}</text>
-                  <text class="u-shopcart-price">¥{{item.product.price}}</text>
+                  <text class="u-shopcart-price">¥:{{item.product.price}}</text>
                 </view>
               </view>
             </view>
@@ -42,7 +42,7 @@
           </view>
       </label>
     </checkbox-group>
-    <text>总价¥:{{totalMoney}}</text>
-    <button class="weui-btn mini-btn" type="primary" size="mini">结算</button>
+    <text class="u-text">总价¥:{{totalMoney}}</text>
+    <button class="weui-btn mini-btn u-buy-btn" type="primary" size="mini">结算</button>
   </view>
 </view>
