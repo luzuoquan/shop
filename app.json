@@ -4,7 +4,9 @@
     "pages/shopcart/index",
     "pages/user/index",
     "pages/product/index",
-    "pages/orderVerify/index"
+    "pages/orderVerify/index",
+    "pages/userInfo/address/index",
+    "pages/userInfo/address/edit"
   ],
   "tabBar": {
     "color": "#000",

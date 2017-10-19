@@ -1,0 +1,12 @@
+<view class='page container'>
+  <view class="page__hd">
+    <view class="weui-cells__title">收货地址</view>
+    <view class="weui-cells weui-cells_after-title">浙江省-杭州市-滨江区</view>
+  </view>
+  <view class='u-address-toolbal'>
+    <button bindtap='editAddress' class="weui-btn mini-btn u-edit-btn" type="primary" plain="true">
+      <text class='u-icon'>+</text>
+      <text class='u-text'>修改地址</text>
+    </button>
+  </view>
+</view>

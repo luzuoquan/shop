@@ -62,3 +62,7 @@ page {
   border: 1px solid #fff;
   font-size: 14px;
 }
+
+navigator {
+  width: 100%;
+}

@@ -17,4 +17,11 @@
     <text class='u-text'>待付款</text>
     <image class='u-navigate-icon' style='width: 15px;height: 15px;' src='{{navigateImage}}'></image>
   </view>
+  <view class='m-all-order'>
+    <navigator url='{{addressUrl}}' open-type='navigate'>
+      <image style='width: 15px;height: 15px;' src='{{addressImage}}'></image>
+      <text class='u-text'>收货地址</text>
+      <image class='u-navigate-icon' style='width: 15px;height: 15px;' src='{{navigateImage}}'></image>
+    </navigator>
+  </view>
 </view>

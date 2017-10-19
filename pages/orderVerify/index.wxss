@@ -1,0 +1,75 @@
+.page__hd {
+  padding: 10px;
+}
+
+.weui-cells_after-title {
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.weui-cell__bd {
+  position: relative;
+  display: flex;
+}
+
+.u-shopcart-thumbnails {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.u-shopcart-number {
+  margin-left: 10px;
+  color: #808080;
+  font-size: 14px;
+  flex: 2;
+}
+
+.u-shopcart-title {
+  font-size: 14px;
+  color: #808080;
+  margin-left: 10px;
+  flex: 3;
+}
+
+.u-orderVerify-toolbal {
+  display: flex;
+  height: 40px;
+  line-height: 40wpx;
+  border-top: 1px solid #eee;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+}
+
+.weui-btn {
+  margin-top: 0;
+}
+
+.u-buy-btn {
+  border-radius: 0;
+  position: absolute;
+  right: 0;
+  height: 40px;
+  width:80px;
+}
+
+button::after {
+  border:  none;
+}
+
+button[size="mini"] {
+  line-height: 40px;
+}
+
+.u-text {
+  color: #808080;
+  font-size: 14px;
+  line-height: 40px;
+}
+
+button[type="primary"] {
+  background-color: #b4282d;
+}

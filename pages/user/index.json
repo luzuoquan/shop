@@ -1,6 +1,4 @@
 {
-  "window": {
-    "backgroundColor": "#000000",
-    "navigationBarTitleText": "购物车"
-  }
+  "backgroundColor": "#000000",
+  "navigationBarTitleText": "个人信息"
 }

@@ -1,0 +1,30 @@
+.page__hd {
+  padding: 10px;
+}
+
+.weui-cells_after-title {
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.u-address-toolbal {
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+  border-top: 1px solid #eee;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.u-icon {
+  display: inline-block;
+  color:#1aad19;
+}
+
+button[type="primary"][plain] {
+  border: none;
+}

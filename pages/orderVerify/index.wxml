@@ -1,3 +1,24 @@
 <view class="page container">
-  订单确认
+  <view class="page__hd">
+    <view class="weui-cells__title">收货地址</view>
+    <view class="weui-cells weui-cells_after-title">浙江省-杭州市-滨江区</view>
+    <view class="weui-cells__title">商品总价¥</view>
+    <view class="weui-cells weui-cells_after-title">2000</view>
+    <view class="weui-cells__title">商品运费</view>
+    <view class="weui-cells weui-cells_after-title">¥0.00</view>
+    <view class="weui-cells__title"></view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell__bd">
+        <image class='u-shopcart-thumbnails' src='/assets/images/product-list-1.jpg'></image>
+        <view class="u-shopcart-detail">
+          <text class='u-shopcart-title'>麻辣火锅</text>
+          <text class="u-shopcart-number">数量:3</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='u-orderVerify-toolbal'>
+    <text class='u-text'>总价¥:{{totalPrice}}</text>
+    <button bindtap='payAction' class="weui-btn mini-btn u-buy-btn" type="primary" size="mini">付款</button>
+  </view>
 </view>
