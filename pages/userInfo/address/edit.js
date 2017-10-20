@@ -1,11 +1,14 @@
 // pages/userInfo/address/edit.js
+const config = require('../../../config/index.js')
+const baseUrl = config.developConfig.host
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    addressValue: null
   },
 
   /**
@@ -13,6 +16,30 @@ Page({
    */
   onLoad(options) {
 
+  },
+
+  saveAddress() {
+    const uuid = wx.getStorageSync('uuid')
+    const data = this.data
+    wx.request({
+      url: `${baseUrl}/api/userInfo/address`,
+      method: 'POST',
+      data: {
+        uuid: uuid,
+        address: data.addressValue
+      },
+      success(res) {
+        if (res.data.success) {
+          wx.showToast({ title: '修改成功' })
+        }
+      }
+    })
+  },
+
+  addressChange(e) {
+    this.setData({
+      addressValue: e.detail.value
+    })
   },
 
   /**

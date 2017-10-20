@@ -7,7 +7,6 @@ App({
     // 校验登录状态
     wx.login({
       success(info) {
-        console.info(321)
         wx.request({
           url: `${config.developConfig.host}/api/login/${info.code}`,
           success(response) {

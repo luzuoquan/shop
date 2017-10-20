@@ -1,1 +1,29 @@
 /* pages/userInfo/address/edit.wxss */
+.page {
+  font-size: 14px;
+}
+
+.weui-input {
+  font-size: 14px;
+}
+
+.u-address-toolbal {
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+  border-top: 1px solid #eee;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+button[type="primary"][plain] {
+  border: none;
+}
+
+.u-address-toolbal button {
+  line-height: 40px;
+}

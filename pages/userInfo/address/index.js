@@ -7,7 +7,6 @@ Page({
 
   },
   editAddress() {
-    console.info(321)
     wx.navigateTo({
       url: '/pages/userInfo/address/edit',
     })

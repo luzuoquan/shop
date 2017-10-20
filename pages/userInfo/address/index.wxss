@@ -28,3 +28,7 @@
 button[type="primary"][plain] {
   border: none;
 }
+
+.u-address-toolbal button {
+  line-height: 40px;
+}

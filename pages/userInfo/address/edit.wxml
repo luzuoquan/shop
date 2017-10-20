@@ -1,3 +1,15 @@
 <view class='page container'>
-  修改地址
+  <view class="weui-cells__title">地址信息</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__bd">
+        <input bindinput='addressChange' class="weui-input" focus="true" placeholder="请输入地址信息" />
+      </view>
+    </view>
+  </view>
+  <view class='u-address-toolbal'>
+    <button bindtap='saveAddress' class="weui-btn mini-btn u-edit-btn" type="primary" plain="true">
+      <text class='u-text'>保存地址</text>
+    </button>
+  </view>
 </view>
