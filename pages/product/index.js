@@ -51,15 +51,24 @@ Page({
   },
   onLoad(info) {
     const that = this
-    wx.request({
-      url: `${baseUrl}/api/product/${info.productId}`,
-      success(res) {
-        const imageList = res.data.result.imageUrl.split(',').map((item,inx) => ({key: inx, url: item}))
-        that.setData({
-          product: Object.assign({}, res.data.result, {imageList: imageList})
-        })
-      }
+    // 10-24版本
+    const product = app.globalData.products.filter(item => item.productId === info.productId)[0]
+    const imageList = product.imageUrl.split(',').map((item,inx) => ({key: inx, url: item}))
+    console.info(Object.assign({}, product, {imageList: imageList}))
+    that.setData({
+      product: Object.assign({}, product, {imageList: imageList})
     })
+    
+
+    // wx.request({
+    //   url: `${baseUrl}/api/product/${info.productId}`,
+    //   success(res) {
+    //     const imageList = res.data.result.imageUrl.split(',').map((item,inx) => ({key: inx, url: item}))
+    //     that.setData({
+    //       product: Object.assign({}, res.data.result, {imageList: imageList})
+    //     })
+    //   }
+    // })
   },
   pruchase() {
     // console.info(this.data.product)

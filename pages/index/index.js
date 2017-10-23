@@ -11,21 +11,49 @@ Page({
       {key: 3, src: '/assets/images/image-3.jpg'}
     ],
     products: [
-      { key: 1, src: '/assets/images/product-list-1.jpg', url: 'http://m.chifan.co.kr/product/detail.html?product_no=110&cate_no=1&display_group=4', title: '巴蜀懒人四川麻辣火锅', price: 190},
-      { key: 2, src: '/assets/images/product-list-1.jpg', url: 'http://m.chifan.co.kr/product/detail.html?product_no=110&cate_no=1&display_group=4', title: '巴蜀懒人四川麻辣火锅', price: 190 },
-      { key: 3, src: '/assets/images/product-list-1.jpg', url: 'http://m.chifan.co.kr/product/detail.html?product_no=110&cate_no=1&display_group=4', title: '巴蜀懒人四川麻辣火锅', price: 190 },
-      { key: 4, src: '/assets/images/product-list-1.jpg', url: 'http://m.chifan.co.kr/product/detail.html?product_no=110&cate_no=1&display_group=4', title: '巴蜀懒人四川麻辣火锅', price: 190 }
+      {
+        productId: '000001',
+        key: 1,
+        src: '/assets/images/product-list-1.jpg',
+        url: '/pages/product/index?productId=000001',
+        productName: '巴蜀懒人四川麻辣火锅',
+        price: 1500
+      },
+      { 
+        key: 2,
+        src: '/assets/images/product-list-2.jpg',
+        url: '/pages/product/index?productId=000002',
+        productName: '橄榄菜',
+        price: 1000,
+        productId: '000002'
+      },
+      { 
+        key: 3,
+        src: '/assets/images/product-list-3.jpg',
+        url: '/pages/product/index?productId=000003',
+        productName: '下饭菜',
+        price: 500,
+        productId: '000003'
+      },
+      { 
+        key: 4,
+        src: '/assets/images/product-list-4.jpg',
+        url: '/pages/product/index?productId=000004',
+        productName: '方便面',
+        price: 1200,
+        productId: '000004'
+      }
     ]
 	},
   onLoad() {
     const that = this;
-    wx.request({
-      url: `${baseUrl}/api/product`,
-      success(res) {
-        that.setData({
-          products: res.data.result.product
-        })
-      }
-    })
+    // wx.request({
+    //   url: `${baseUrl}/api/product`,
+    //   success(res) {
+    //     that.setData({
+    //       products: res.data.result.product
+    //     })
+    //   }
+    // })
   }
 })
