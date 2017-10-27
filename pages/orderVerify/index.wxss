@@ -73,3 +73,7 @@ button[size="mini"] {
 button[type="primary"] {
   background-color: #b4282d;
 }
+
+.u-orderVerify-toolbal {
+  padding-left: 5px;
+}

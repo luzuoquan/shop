@@ -22,7 +22,7 @@
       },
       {
         "pagePath": "pages/shopcart/index",
-        "text": "储备",
+        "text": "购物车",
         "iconPath": "assets/images/shopcart.png",
         "selectedIconPath": "assets/images/shopcart.png"
       },{
