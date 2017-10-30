@@ -3,7 +3,7 @@
     <view class="weui-cells__title">收货地址</view>
     <view class="weui-cells weui-cells_after-title">浙江省-杭州市-滨江区</view>
     <view class="weui-cells__title">商品总价¥</view>
-    <view class="weui-cells weui-cells_after-title">2000</view>
+    <view class="weui-cells weui-cells_after-title">{{totalPrice}}</view>
     <view class="weui-cells__title">商品运费</view>
     <view class="weui-cells weui-cells_after-title">¥0.00</view>
     <view class="weui-cells__title"></view>

@@ -52,29 +52,29 @@ Page({
   onLoad(info) {
     const that = this
     // 10-24版本
-    const product = app.globalData.products.filter(item => item.productId === info.productId)[0]
-    const imageList = product.imageUrl.split(',').map((item,inx) => ({key: inx, url: item}))
-    console.info(Object.assign({}, product, {imageList: imageList}))
-    that.setData({
-      product: Object.assign({}, product, {imageList: imageList})
-    })
+    // const product = app.globalData.products.filter(item => item.productId === info.productId)[0]
+    // const imageList = product.imageUrl.split(',').map((item,inx) => ({key: inx, url: item}))
+    // console.info(Object.assign({}, product, {imageList: imageList}))
+    // that.setData({
+    //   product: Object.assign({}, product, {imageList: imageList})
+    // })
     
 
-    // wx.request({
-    //   url: `${baseUrl}/api/product/${info.productId}`,
-    //   success(res) {
-    //     const imageList = res.data.result.imageUrl.split(',').map((item,inx) => ({key: inx, url: item}))
-    //     that.setData({
-    //       product: Object.assign({}, res.data.result, {imageList: imageList})
-    //     })
-    //   }
-    // })
+    wx.request({
+      url: `${baseUrl}/api/product/${info.productId}`,
+      success(res) {
+        const imageList = res.data.result.imageUrl.split(',').map((item,inx) => ({key: inx, url: item}))
+        that.setData({
+          product: Object.assign({}, res.data.result, {imageList: imageList})
+        })
+      }
+    })
   },
   pruchase() {
     // console.info(this.data.product)
     const data = this.data
     wx.navigateTo({
-      url: `/pages/orderVerify/index?productId=${data.product.productId}`
+      url: `/pages/orderVerify/index?productId=${data.product.productId}&amount=${data.number}`
     })
   }
 })

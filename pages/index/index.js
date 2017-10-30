@@ -47,13 +47,13 @@ Page({
 	},
   onLoad() {
     const that = this;
-    // wx.request({
-    //   url: `${baseUrl}/api/product`,
-    //   success(res) {
-    //     that.setData({
-    //       products: res.data.result.product
-    //     })
-    //   }
-    // })
+    wx.request({
+      url: `${baseUrl}/api/product`,
+      success(res) {
+        that.setData({
+          products: res.data.result.product
+        })
+      }
+    })
   }
 })
