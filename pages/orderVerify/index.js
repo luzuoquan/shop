@@ -6,10 +6,13 @@ const app = getApp()
 Page({
   data: {
     totalPrice: 0,
-    amount: 0
+    amount: 0,
+    address: null,
+    product: {}
   },
   onLoad() {
     const { productId, amount } = this.options
+    const that = this
     const uuid = wx.getStorageSync('uuid')
     new Promise((resolve, reject) => {
       wx.request({
@@ -30,7 +33,11 @@ Page({
           method: 'GET',
           success(res) {
             const data = res.data
-            console.info(resolve, data)
+            that.setData({
+              product: resolve.result,
+              amount: amount,
+              address: data.result.address
+            })
           },
           fail() {
             reject()
