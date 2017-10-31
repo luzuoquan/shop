@@ -68,12 +68,18 @@ button[size="mini"] {
   color: #808080;
   font-size: 14px;
   line-height: 40px;
+  margin-left: 15px;
 }
 
 button[type="primary"] {
   background-color: #b4282d;
 }
 
-.u-orderVerify-toolbal {
-  padding-left: 5px;
+.weui-cells_after-title {
+  margin-top: 5px;
+}
+
+.button-hover[type="primary"] {
+  color: #fff;
+  background-color: #b4282d;
 }

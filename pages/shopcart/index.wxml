@@ -43,6 +43,6 @@
       </label>
     </checkbox-group>
     <text class="u-text">总价¥:{{totalMoney}}</text>
-    <button class="weui-btn mini-btn u-buy-btn" type="primary" size="mini">结算</button>
+    <button class="weui-btn mini-btn u-buy-btn" type="primary" bindtap="settle" size="mini">结算</button>
   </view>
 </view>

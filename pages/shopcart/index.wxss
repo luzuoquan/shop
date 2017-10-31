@@ -118,3 +118,8 @@ button[size="mini"] {
 button[type="primary"] {
   background-color: #b4282d;
 }
+
+.button-hover[type="primary"] {
+  color: #fff;
+  background-color: #b4282d;
+}

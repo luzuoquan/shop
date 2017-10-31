@@ -8,48 +8,78 @@ Page({
     totalPrice: 0,
     amount: 0,
     address: null,
-    product: {}
+    product: []
   },
   onLoad() {
-    const { productId, amount } = this.options
+    const { productId, amount, productIds } = this.options
     const that = this
     const uuid = wx.getStorageSync('uuid')
-    new Promise((resolve, reject) => {
-      wx.request({
-        url: `${baseUrl}/api/product/${productId}`,
-        method: 'GET',
-        success(res) {
-          const data = res.data
-          resolve(data)
-        },
-        fail() {
-          reject()
-        }
-      })
-    })
-      .then(resolve => {
+    const shopcart = wx.getStorageSync('shopcart')
+
+    if (productId) {
+      new Promise((resolve, reject) => {
         wx.request({
-          url: `${baseUrl}/api/userInfo/address/${uuid}`,
+          url: `${baseUrl}/api/product/${productId}`,
           method: 'GET',
           success(res) {
             const data = res.data
-            that.setData({
-              product: resolve.result,
-              amount: amount,
-              address: data.result.address
-            })
+            resolve(data)
           },
           fail() {
             reject()
           }
         })
       })
-      .catch(() => {
-        wx.showModal({
-          content: '网络请求异常',
-          showCancel: false
+        .then(resolve => {
+          wx.request({
+            url: `${baseUrl}/api/userInfo/address/${uuid}`,
+            method: 'GET',
+            success(res) {
+              const data = res.data
+              that.setData({
+                product: [Object.assign({}, resolve.result, {amount: amount})],
+                totalPrice: amount * resolve.result.price,
+                address: data.result.address
+              })
+            },
+            fail() {
+              reject()
+            }
+          })
         })
+        .catch(() => {
+          wx.showModal({
+            content: '网络请求异常',
+            showCancel: false
+          })
+        })
+    } else {
+      const product = shopcart.filter(item => productIds.split(',').indexOf(String(item.id)) > -1)
+      wx.request({
+        url: `${baseUrl}/api/userInfo/address/${uuid}`,
+        method: 'GET',
+        success(res) {
+          const data = res.data
+          let _totalPrice = 0
+
+          product.forEach(item => {
+            _totalPrice += item.productAccount * item.product.price
+          })
+
+          that.setData({
+            product: product,
+            totalPrice: _totalPrice,
+            address: data.result.address
+          })
+        },
+        fail() {
+          wx.showModal({
+            content: '网络请求异常',
+            showCancel: false
+          })
+        }
       })
+    }
   },
   payAction() {
     wx.showToast({ title: '支付尚在开发中' })

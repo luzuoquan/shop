@@ -25,6 +25,7 @@ Page({
             },
             totalMoney: 0
           })
+          wx.setStorageSync('shopcart', res.data.result.shopcart)
         }
       }
     })
@@ -83,5 +84,19 @@ Page({
       shopcart: shopcart,
       totalMoney: _totalMoney
     })
+  },
+  settle() {
+    const { shopcart } = this.data
+    const productIds = shopcart.filter(item => item.checked).map(item => (item.id)).join(',')
+    if (productIds.length > 0) {
+      wx.navigateTo({
+        url: `/pages/orderVerify/index?productIds=${productIds}`
+      })
+    } else {
+      wx.showModal({
+        content: '请至少选择一种商品',
+        showCancel: false
+      })
+    }
   }
 })
