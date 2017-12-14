@@ -35,6 +35,8 @@ module.exports = {
       productName: '情义】手工饺子优惠选（芹菜猪肉+韭菜猪肉）',
       price: 1200,
       productId: '000005'
+    }, {
+      
     }
   ]
 }
