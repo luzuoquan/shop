@@ -1,5 +1,6 @@
 // index
 const config = require('../../config/index.js')
+const localData = require('../../mock-data/product')
 const baseUrl = config.developConfig.host
 Page({
 	data: {
@@ -46,14 +47,18 @@ Page({
     ]
 	},
   onLoad() {
-    const that = this;
-    wx.request({
-      url: `${baseUrl}/api/product`,
-      success(res) {
-        that.setData({
-          products: res.data.result.product
-        })
-      }
+    const that = this
+    console.info(localData)
+    this.setData({
+      products: localData.products
     })
+    // wx.request({
+    //   url: `${baseUrl}/api/product`,
+    //   success(res) {
+    //     that.setData({
+    //       products: res.data.result.product
+    //     })
+    //   }
+    // })
   }
 })
