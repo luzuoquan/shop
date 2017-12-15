@@ -8,7 +8,7 @@
     <block wx:for="{{product}}" wx:key="key">
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell__bd">
-          <image class='u-shopcart-thumbnails' src='{{item.imageUrl || item.thumbnails}}'></image>
+          <image class='u-shopcart-thumbnails' src='{{item.imageUrl || item.thumbnails || item.src}}'></image>
           <view class="u-shopcart-detail">
             <text class='u-shopcart-title'>{{item.productName || item.product.productName}}</text>
             <text class="u-shopcart-number">数量:{{item.amount || item.productAccount}}</text>

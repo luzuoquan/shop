@@ -7,6 +7,19 @@ App({
     // 校验登录状态
     wx.login({
       success(info) {
+        wx.getUserInfo({
+          withCredentials: true,
+          success(res) {
+            // console.info(res)
+            wx.setStorageSync('userInfo', res.userInfo)
+          },
+          fail() {
+            wx.showModal({
+              content: '登录失败，未正确获取用户信息',
+              showCancel: false
+            })
+          }
+        })
         // wx.request({
         //   url: `${config.developConfig.host}/api/login/${info.code}`,
         //   success(response) {

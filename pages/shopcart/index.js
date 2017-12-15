@@ -12,23 +12,31 @@ Page({
   },
   onShow() {
     const uuid = wx.getStorageSync('uuid')
-    const that = this
-    wx.request({
-      url: `${baseUrl}/api/shopcart/${uuid}`,
-      success(res) {
-        if (res.data.success) {
-          that.setData({
-            shopcart: res.data.result.shopcart,
-            allBuy: {
-              checked: false,
-              value: 'all'
-            },
-            totalMoney: 0
-          })
-          wx.setStorageSync('shopcart', res.data.result.shopcart)
-        }
-      }
+    const shopcart = wx.getStorageSync('shopcart')
+    this.setData({
+      shopcart: shopcart,
+      allBuy: {
+        checked: false,
+        value: 'all'
+      },
+      totalMoney: 0
     })
+    // wx.request({
+    //   url: `${baseUrl}/api/shopcart/${uuid}`,
+    //   success(res) {
+    //     if (res.data.success) {
+    //       that.setData({
+    //         shopcart: res.data.result.shopcart,
+    //         allBuy: {
+    //           checked: false,
+    //           value: 'all'
+    //         },
+    //         totalMoney: 0
+    //       })
+    //       wx.setStorageSync('shopcart', res.data.result.shopcart)
+    //     }
+    //   }
+    // })
   },
   checkboxChange(e) {
     // console.log('checkbox发生change事件，携带value值为：', e.detail.value)
@@ -48,7 +56,7 @@ Page({
 
     shopcart.forEach(item => {
       if (item.checked) {
-        _totalMoney += item.productAccount * item.product.price
+        _totalMoney += item.productAccount * item.price
       }
     })
 
@@ -70,7 +78,7 @@ Page({
 
     if (values[0] === 'all') {
       shopcart.forEach(item => {
-        _totalMoney += item.productAccount * item.product.price
+        _totalMoney += item.productAccount * item.price
       }) 
     } else {
       _totalMoney = 0
@@ -87,7 +95,7 @@ Page({
   },
   settle() {
     const { shopcart } = this.data
-    const productIds = shopcart.filter(item => item.checked).map(item => (item.id)).join(',')
+    const productIds = shopcart.filter(item => item.checked).map(item => (item.productId)).join(',')
     if (productIds.length > 0) {
       wx.navigateTo({
         url: `/pages/orderVerify/index?productIds=${productIds}`

@@ -21,24 +21,36 @@ Page({
   saveAddress() {
     const uuid = wx.getStorageSync('uuid')
     const data = this.data
-    wx.request({
-      url: `${baseUrl}/api/userInfo/address`,
-      method: 'PUT',
-      data: {
-        uuid: uuid,
-        address: data.addressValue
-      },
-      success(res) {
-        if (res.data.success) {
-          wx.showToast({ 
-            title: '修改成功',
-            success() {
-              setTimeout(() => wx.navigateBack(1), 1000)
-            }
-          })
-        }
+    wx.setStorage({
+      key: 'address',
+      data: data.addressValue,
+      success() {
+        wx.showToast({ 
+          title: '修改成功',
+          success() {
+            setTimeout(() => wx.navigateBack(1), 1000)
+          }
+        })
       }
     })
+    // wx.request({
+    //   url: `${baseUrl}/api/userInfo/address`,
+    //   method: 'PUT',
+    //   data: {
+    //     uuid: uuid,
+    //     address: data.addressValue
+    //   },
+    //   success(res) {
+    //     if (res.data.success) {
+    //       wx.showToast({ 
+    //         title: '修改成功',
+    //         success() {
+    //           setTimeout(() => wx.navigateBack(1), 1000)
+    //         }
+    //       })
+    //     }
+    //   }
+    // })
   },
 
   addressChange(e) {

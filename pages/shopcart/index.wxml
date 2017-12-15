@@ -21,7 +21,7 @@
                 <view class="u-shopcart-detail">
                   <text class='u-shopcart-title'>{{item.product.productName}}</text>
                   <text class="u-shopcart-number">数量:{{item.productAccount}}</text>
-                  <text class="u-shopcart-price">¥:{{item.product.price}}</text>
+                  <text class="u-shopcart-price">¥:{{item.price}}</text>
                 </view>
               </view>
             </view>

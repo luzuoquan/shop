@@ -48,7 +48,6 @@ Page({
 	},
   onLoad() {
     const that = this
-    console.info(localData)
     this.setData({
       products: localData.products
     })
