@@ -7,9 +7,9 @@ Page({
 		name: 'Fedora123',
     logoUrl: '/assets/images/m_logo.jpg',
     imgUrls: [
-      {key: 1, src: '/assets/images/image-1.jpg'},
-      {key: 2, src: '/assets/images/image-2.jpg'},
-      {key: 3, src: '/assets/images/image-3.jpg'}
+      {key: 1, src: '/assets/images/image-1.jpeg'},
+      {key: 2, src: '/assets/images/image-2.jpeg'},
+      {key: 3, src: '/assets/images/image-3.jpeg'}
     ],
     products: [
       {
@@ -17,14 +17,14 @@ Page({
         key: 1,
         src: '/assets/images/product-list-1.jpg',
         url: '/pages/product/index?productId=000001',
-        productName: '巴蜀懒人四川麻辣火锅',
+        productName: '生活用品--脸盆',
         price: 1500
       },
       { 
         key: 2,
         src: '/assets/images/product-list-2.jpg',
         url: '/pages/product/index?productId=000002',
-        productName: '橄榄菜',
+        productName: '生活用品--纸巾',
         price: 1000,
         productId: '000002'
       },
@@ -32,7 +32,7 @@ Page({
         key: 3,
         src: '/assets/images/product-list-3.jpg',
         url: '/pages/product/index?productId=000003',
-        productName: '下饭菜',
+        productName: '生活用品--脸盆',
         price: 500,
         productId: '000003'
       },
@@ -40,7 +40,7 @@ Page({
         key: 4,
         src: '/assets/images/product-list-4.jpg',
         url: '/pages/product/index?productId=000004',
-        productName: '方便面',
+        productName: '生活用品--脸盆',
         price: 1200,
         productId: '000004'
       }
